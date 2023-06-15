@@ -23,13 +23,15 @@ All the commands described in the other repositories were executed in a Kali Lin
 
 <br />
 
-## Getting started
-
-Instalar o **steghide**
-
-```bash
+## Tools
+  
+```sh
 sudo apt install steghide
 ```
+
+<br />
+
+## Getting started
 
 Durante sua execusao ele pede uma senha
 tentar a frase encontrada dentro da imagem
