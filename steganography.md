@@ -2,9 +2,9 @@
 
 # Steganography
 
+![development_progress](https://img.shields.io/badge/development-progress-orange)
 ![programming_language](https://img.shields.io/badge/shell-script-informational)
 ![date](https://img.shields.io/badge/class-14/06/2023-informational)
-![development_progress](https://img.shields.io/badge/development-progress-orange)
 
 See how steganography works based on practical examples.
 
@@ -14,6 +14,16 @@ All images and exemples used on this repository will be available on this [Googl
 <br />
 
 </div>
+
+## Disclaimer
+
+Do not perform any of these actions on your everyday computer, be aware that some of the files contained in the Google Drive folder contain viruses.
+
+All the commands described in the other repositories were executed in a Kali Linux ISO running in a virtual machine.
+
+<br />
+
+## Getting started
 
 Instalar o **steghide**
 
