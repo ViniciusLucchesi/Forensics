@@ -15,14 +15,6 @@ All images and exemples used on this repository will be available on this [Googl
 
 </div>
 
-## Tools
-
-```text
-Will be avaliable
-```
-
-<br />
-
 ## Objectives
 
 - Recovered files
@@ -31,11 +23,17 @@ Will be avaliable
 
 <br />
 
-## Getting started
+## Senhas encontradas
 
-To extract all information with the **mount** command, first we need to create a folder called **analise**.
+```text
+seus_olhos
+```
 
-After the **analise** folder was created, run the **mount** command to extract all information of the **img_p1.dd** file.
+<br />
+
+## Configurações iniciais
+
+Primeiramente precisamos extrair todos os arquivos da imagem **img_p1.dd**.
 
 ```sh
 mkdir analise
@@ -47,12 +45,69 @@ sudo mount -o ro,noexec,offset=$((512*2048)) img_p1.dd analise
 
 <br />
 
-Let`s see all the files excluded on this **dd** extension running the command below.
+## Recuperando arquivos da imagem
+
+Para realizarmos a recuperação dos arquivos da imagem **img_p1.dd** sem poluir muito nossos resultados da prova iremos faze-lo em um [arquivo separado](recuperacao_arquivos.md#recuperação-de-arquivos).
+
+<br />
+
+## Buscando senhas
+
+Dentro do nosso diretório `prova` vamos rodar o **grep** buscando pela palavra **senh** de maneira recursiva e sendo case sensitive.
 
 ```sh
-fls -adpro 2048 img_p1.dd
+grep -ri "senh" .
 ```
 
 ```sh
-icat -o 2048 img_p1.dd > NAO_SEI_O_RESTANTE_DO_COMANDO
+OUTPUT
+
+grep: ./output/ole/00006338.ole: binary file matches
+grep: ./img_p1.dd: binary file matches
+grep: ./analise/.Trash-0/files/olhe a paisagem.jpg: binary file matches
+grep: ./analise/.Trash-0/files/eye.jpg: binary file matches
+```
+
+## Brute Force - steghide
+
+Para não perdermos tempo utilizando rodando o comando `steghide` arquivo por arquivo criaremos o script `steg.sh` que testará arquivo por arquivo com cada uma das senhas encontradas.
+
+```sh
+#!/bin/bash
+
+path="/home/kali/Downloads/prova/imagens"
+
+for file in "$path"/*; do
+    if [ -f "$file" ]; then
+        echo "[*] Analisando: $file"
+        for word in `cat words.txt`; do
+            steghide extract -sf $file -p $word > /dev/null 2>&1
+            if [ $? -eq 0 ]; then
+                echo "    [+] Encontrou algo!"
+                echo "    [+] Chave: $word
+                echo ""
+            fi
+        done
+    fi
+done
+```
+
+### steg.sh
+
+Na primeira vez rodando nosso Shell script obtivemos o seguinte resultado, retornando a imagem `ite.jpg`.
+
+```sh
+OUTPUT 
+
+[*] Analisando: /home/kali/Downloads/prova/imagens/Ayishah.jpg
+    [+] Encontrou algo!
+    [+] Chave: panic
+
+[*] Analisando: /home/kali/Downloads/prova/imagens/olhos.jpg
+    [+] Encontrou algo!
+    [+] Chave: seus_olhos
+
+[*] Analisando: /home/kali/Downloads/prova/imagens/paisagem.jpg
+    [+] Encontrou algo!
+    [+] Chave: alma
 ```
