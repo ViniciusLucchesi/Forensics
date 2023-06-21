@@ -2,18 +2,46 @@
 
 # Recuperação de Arquivos
 
-![development_progress](https://img.shields.io/badge/development-progress-orange)
+![development_progress](https://img.shields.io/badge/Status-concluído-green)
 ![start_date](https://img.shields.io/badge/Start-20/06/2023-informational)
 ![end_date](https://img.shields.io/badge/End-21/06/2023-informational)
 
-Os dados foram extraídos da sessão [Todos os arquivos da imagem](prova.md#todos-os-arquivos-da-imagem)
+Tenha uma visão mais ampla dos passos realizados para a obtenção de alguma senha.
 
-Este repositório tem o objetivo de organizar e recuperar quais arquivos ainda não foram recuperados.
+Todos os arquivos propostos a serem analisados passaram pelos processos da sessão [tipos de análises](#tipos-de-análises).
 
 <br />
 <br />
 
 </div>
+
+## Tipos de análises
+
+> ### file
+>
+> ```sh
+> file [nome_do_arquivo]
+> ```
+>
+> Comando responsável por verificar a extensão do arquivo, para validarmos se ele corresponde com a extensão apresentada em seu nome.
+
+```sh
+head -n5 [nome_do_arquivo]
+```
+
+```sh
+tail [nome_do_arquivo]
+```
+
+```sh
+strings -a [nome_do_arquivo]
+```
+
+```sh
+exiftool [nome_do_arquivo]
+```
+
+<br />
 
 ## Configurações iniciais
 
