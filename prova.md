@@ -2,15 +2,18 @@
 
 # Prova
 
-![development_progress](https://img.shields.io/badge/Status-concluído-green)
-![start_date](https://img.shields.io/badge/Start-14/06/2023-informational)
-![end_date](https://img.shields.io/badge/End-21/06/2023-informational)
+![development_progress](https://img.shields.io/badge/Status-concluído-green) &nbsp;
+![start_date](https://img.shields.io/badge/início-14/06/2023-informational) &nbsp;
+![end_date](https://img.shields.io/badge/fim-21/06/2023-informational) &nbsp;
 
 Encontre todas as senhas escondidas no arquivo **img_p1.dd**
 
 O arquivo pode ser encontrado no [Google Drive](https://drive.google.com/drive/folders/1xWlrwM7W38h8E6JtuCbDOMazfARTOlms) disponibilizado pelo professor.
 
 <br />
+
+[Senhas encontradas](#senhas-encontradas) • [Buscando Senhas](#buscando-senhas) • [Recuperando arquivos](recuperacao_arquivos.md#recuperação-de-arquivos) • [Brute Force](#brute-force---steghide)
+
 <br />
 
 </div>
@@ -55,7 +58,7 @@ sudo mount -o ro,noexec,offset=$((512*2048)) img_p1.dd analise
 
 ## Buscando senhas
 
-Dentro do nosso diretório `prova` vamos rodar o **grep** buscando pela palavra **senh** de maneira recursiva e sendo case sensitive.
+Dentro do nosso diretório `prova` vamos rodar o **grep** buscando pela palavra **senh** utilizando o comando `grep` de maneira recursiva sem ser case sensitive com a adição dos parâmetros `-ri`.
 
 ```sh
 grep -ri "senh" .
@@ -106,9 +109,9 @@ for file in "$path"/*; do
 done
 ```
 
-### steg.sh
+### Script steg.sh
 
-Na primeira vez rodando nosso Shell script obtivemos o seguinte resultado, retornando a imagem `ite.jpg`.
+Ao total somente esses 3 arquivos foram abertos através deste script shell, nos retornando **2 novas imagens** e **1 log de erro**, sendo uma das 2 novas imagens a **Ayishah.jpg** que nos devolveu o **log de erro**.
 
 ```sh
 OUTPUT 

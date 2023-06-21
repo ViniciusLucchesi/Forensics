@@ -3,52 +3,20 @@
 # Recuperação de Arquivos
 
 ![development_progress](https://img.shields.io/badge/Status-concluído-green) &nbsp;
-![start_date](https://img.shields.io/badge/Start-20/06/2023-informational) &nbsp;
-![end_date](https://img.shields.io/badge/End-21/06/2023-informational) &nbsp;
+![start_date](https://img.shields.io/badge/início-20/06/2023-informational) &nbsp;
+![end_date](https://img.shields.io/badge/fim-21/06/2023-informational) &nbsp;
 
 Tenha uma visão mais ampla dos passos realizados para a obtenção de alguma senha.
 
 Todos os arquivos propostos a serem analisados passaram pelos processos da sessão [tipos de análises](#tipos-de-análises).
 
 <br />
+
+[Configurações Iniciais](#configurações-iniciais) • [Arquivos Novos](#arquivos-novos) • [Recuperando Arquivos](#recuperando-os-arquivos)
+
 <br />
 
 </div>
-
-## Tipos de análises
-
->
-> ```sh
-> file [nome_do_arquivo]
-> ```
->
-> Comando responsável por verificar a extensão do arquivo, para validarmos se ele corresponde com a extensão apresentada em seu nome.
->
-> ```sh
-> head -n5 [nome_do_arquivo]
-> ```
->
-> Retorna somente as primeira linhas do arquivo, o parâmetro `-n5` especifica que devem ser retornados somente as 5 linhas.
->
-> ```sh
-> tail [nome_do_arquivo]
-> ```
->
-> Retorna somente o rodapé do arquivo passado como parâmetro.
->
-> ```sh
-> strings -a [nome_do_arquivo]
-> ```
->
-> Retorna o texto encontrado no arquivo, o parâmetro `-a` especifica que a busca por texto deve ser feita em todo o arquivo.
->
-> ```sh
-> exiftool [nome_do_arquivo]
-> ```
->
-> Utilizado para verificar os metadados do arquivo passado como parâmetro.
-
-<br />
 
 ## Configurações iniciais
 
@@ -62,46 +30,48 @@ mkdir recovered
 
 ## Arquivos encontrados
 
+Para conseguirmos ver quais são os arquivos existentes dentro da imagem **img_p1.dd** basta rodar o comando a seguir, que nos retornar tanto arquivos que conseguimos recuperar quanto os arquivos que foram deletados, ou que estão na lixeira.
+
 ```sh
 fls -apro 2048 img_p1.dd
 ```
 
-## OUTPUT
+Abaixo, nas sessões [Arquivos repetidos](#arquivos-repetidos) e [Arquivos novos](#arquivos-novos) podemos visualizar quais foram os arquivos retornados pelo comando acima
 
 ### Arquivos repetidos
 
-- [ ] 5:          carro1.jpg
-- [ ] 7:          carro2.png
-- [ ] 9:          carro3.jpg
-- [ ] 11:         carro4.jpg
-- [ ] 47:         Dennis Ritchie.jpg
-- [ ] 57:         Klingon.jpg
-- [ ] 19721:      Backup_viagem/olhos.jpg
-- [ ] 6664:       .Trash-1000/info/BKP_Preferida.jpg.trashinfo
-- [ ] 6670:       .Trash-1000/info/Burns sexy - Minha foto para o Linkedin.jpg.trashinfo
-- [ ] 6674:       .Trash-1000/info/Controle_Clientes.xlsx.trashinfo
-- [ ] 6677:       .Trash-1000/info/foto1.png.trashinfo
-- [ ] 6680:       .Trash-1000/info/foto02.jpg.trashinfo
-- [ ] 6683:       .Trash-1000/info/foto03.jpg.trashinfo
-- [ ] 6686:       .Trash-1000/info/foto04.jpg.trashinfo
-- [ ] 6689:       .Trash-1000/info/foto05.jpg.trashinfo
-- [ ] 6692:       .Trash-1000/info/Lembrete.doc.trashinfo
-- [ ] 394633:     .Trash-0/info/dia-da-toalha-macacos-espaciais.png.trashinfo
-- [ ] 394636:     .Trash-0/info/Esfiha.jpg.trashinfo
-- [ ] 394640:     .Trash-0/info/olhe a paisagem.jpg.trashinfo
-- [ ] 394643:     .Trash-0/info/eye.jpg.trashinfo
-- [ ] **[DEL]** 394646:   .Trash-0/info/eye.jpg.trashinfo.8UFTKZ
-- [ ] **[DEL]** 6696:     .Trash-1000/info/Lembrete.doc.trashinfo.11FEVX
-- [ ] **[DEL]** 50:       .carta.exe.swp
-- [ ] **[DEL]** 53:       _ARTAE~1.SWX
+- [ ] 5:        carro1.jpg
+- [ ] 7:        carro2.png
+- [ ] 9:        carro3.jpg
+- [ ] 11:       carro4.jpg
+- [ ] 47:       Dennis Ritchie.jpg
+- [ ] 57:       Klingon.jpg
+- [ ] 19721:    Backup_viagem/olhos.jpg
+- [ ] 6664:     .Trash-1000/info/BKP_Preferida.jpg.trashinfo
+- [ ] 6670:     .Trash-1000/info/Burns sexy - Minha foto para o Linkedin.jpg.trashinfo
+- [ ] 6674:     .Trash-1000/info/Controle_Clientes.xlsx.trashinfo
+- [ ] 6677:     .Trash-1000/info/foto1.png.trashinfo
+- [ ] 6680:     .Trash-1000/info/foto02.jpg.trashinfo
+- [ ] 6683:     .Trash-1000/info/foto03.jpg.trashinfo
+- [ ] 6686:     .Trash-1000/info/foto04.jpg.trashinfo
+- [ ] 6689:     .Trash-1000/info/foto05.jpg.trashinfo
+- [ ] 6692:     .Trash-1000/info/Lembrete.doc.trashinfo
+- [ ] 394633:   .Trash-0/info/dia-da-toalha-macacos-espaciais.png.trashinfo
+- [ ] 394636:   .Trash-0/info/Esfiha.jpg.trashinfo
+- [ ] 394640:   .Trash-0/info/olhe a paisagem.jpg.trashinfo
+- [ ] 394643:   .Trash-0/info/eye.jpg.trashinfo
+- [ ] 394646:   .Trash-0/info/eye.jpg.trashinfo.8UFTKZ `Deletado`
+- [ ] 6696:     .Trash-1000/info/Lembrete.doc.trashinfo.11FEVX `Deletado`
+- [ ] 50:       .carta.exe.swp `Deletado`
+- [ ] 53:       _ARTAE~1.SWX `Deletado`
 
 ## Arquivos novos
 
-- [x] 19718:    Backup_viagem/eye.jpg        **[DEL]**
-- [x] 19719:    Backup_viagem/_LHEAP~1.JPG   **[DEL]**
-- [x] 19723:    Backup_viagem/paisagem.jpg   **[DEL]**
-- [x] 52:       carta.exe                    **[DEL]**
-- [x] 55:       Esfiha.jpg                   **[DEL]**
+- [x] 19718:    Backup_viagem/eye.jpg        `Deletado`
+- [x] 19719:    Backup_viagem/_LHEAP~1.JPG   `Deletado`
+- [x] 19723:    Backup_viagem/paisagem.jpg   `Deletado`
+- [x] 52:       carta.exe                    `Deletado`
+- [x] 55:       Esfiha.jpg                   `Deletado`
 - [x] 6791:       .Trash-1000/files/BKP_Preferida.jpg
 - [x] 6796:       .Trash-1000/files/Burns sexy - Minha foto para o Linkedin.jpg
 - [x] 6799:       .Trash-1000/files/Controle_Clientes.xlsx
@@ -120,7 +90,7 @@ fls -apro 2048 img_p1.dd
 
 ## Recuperando os arquivos
 
-Os únicos arquivos que serão recuperados serão os arquivos que julgamos serem novos.
+Os únicos arquivos que serão recuperados serão os arquivos que julgamos serem novos, sendo correspondentes aos arquivos listados na sessão [Arquivos novos](#arquivos-novos).
 
 ```sh
 # Backup_viagem
@@ -155,25 +125,25 @@ icat -o 2048 ../../../img_p1.dd 394767 > eye.jpg
 
 ## Analise dos dados recuperados
 
-#### Backup_viagem/_LHEAP~1.JPG
+> #### Backup_viagem/_LHEAP~1.JPG
+>
+> ```text
+> senha: panic
+> 
+> OBS: Senha escrita pelo Misha.
+> ```
 
-```text
-senha: panic
-
-OBS: Senha escrita pelo Misha.
-```
-
-#### carta.exe
-
-Este arquivo não é um executável, na realidade ele é um `ASCII text` que contém um texto com pontuações fora do comum, o que se encaixa em um `SPAM mimic`.
-
-Link: [spammimic.com](https://www.spammimic.com/decode32.shtml)
-
-```text
-senha: alma
-
-OBS: Foi utilizado a versão antiga do spammimic.com para conseguirmos decodificar a mensagem
-```
+> #### carta.exe
+>
+> Este arquivo não é um executável, na realidade ele é um `ASCII text` que contém um texto com pontuações  fora do comum, o que se encaixa em um `SPAM mimic`.
+>
+> Link: [spammimic.com](https://www.spammimic.com/decode32.shtml)
+>
+> ```text
+> senha: alma
+> 
+> OBS: Foi utilizado a versão antiga do spammimic.com para conseguirmos decodificar a mensagem
+> ```
 
 #### trash/0/ "olhe a paisagem.jpg"
 
@@ -285,7 +255,11 @@ OBS: Desbloqueio do arquivo pelo comando steghide (não temos a palavra secreta)
 
 #### Controle_Clientes.xlsx
 
-Se trata de uma planilha de Excel criada por Eduardo Montes - <eduardo@escritoriodeprojetos.com.br>
+Se trata de uma planilha de Excel criada por Eduardo Montes - <eduardo@escritoriodeprojetos.com.br>.
+
+O Workspace do Excel continha uma única aba chamada `Sheet 2`, o que nos indica que havia uma `Sheet 1` que foi deletada ou escondida.
+
+Trocando a extensão do arquivo de `xlsx` para `zip` e realizando a descompactação do arquivo com o comando `unzip Controle_Clientes.zip` conseguimos encontrar a planilha `Sheet 1` na masta `_xl`, mas não consegui extrair nenhuma informação pertinente dessa aba.
 
 ```text
 senha: Nenhuma
@@ -308,3 +282,37 @@ senha: Nenhuma
 
 OBS: O arquivo está vazio.
 ```
+
+<br />
+
+## Tipos de análises
+
+> ```sh
+> file [nome_do_arquivo]
+> ```
+>
+> Comando responsável por verificar a extensão do arquivo, para validarmos se ele corresponde com a extensão apresentada em seu nome.
+
+> ```sh
+> head -n5 [nome_do_arquivo]
+> ```
+>
+> Retorna somente as primeira linhas do arquivo, o parâmetro `-n5` especifica que devem ser retornados somente as 5 linhas.
+
+> ```sh
+> tail [nome_do_arquivo]
+> ```
+>
+> Retorna somente o rodapé do arquivo passado como parâmetro.
+
+> ```sh
+> strings -a [nome_do_arquivo]
+> ```
+>
+> Retorna o texto encontrado no arquivo, o parâmetro `-a` especifica que a busca por texto deve ser feita em todo o arquivo.
+
+> ```sh
+> exiftool [nome_do_arquivo]
+> ```
+>
+> Utilizado para verificar os metadados do arquivo passado como parâmetro.
