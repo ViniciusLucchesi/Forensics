@@ -87,7 +87,9 @@ Para realizarmos a recuperação dos arquivos da imagem **img_p1.dd** sem poluir
 
 ## Brute Force - steghide
 
-Para não perdermos tempo utilizando rodando o comando `steghide` arquivo por arquivo criaremos o script `steg.sh` que testará arquivo por arquivo com cada uma das senhas encontradas.
+Para não perdermos tempo rodando o comando `steghide` arquivo por arquivo criaremos o script `steg.sh` que testará arquivo por arquivo com cada uma das senhas encontradas.
+
+Para isso vamos mover todas as imagens que encontramos para uma nova pasta chamada `imagens`. Também será necessário criar um arquivo chamado `words.txt` e adicionar nele as senhas encontradas na sessão [Recuperando arquivos](recuperacao_arquivos.md#analise-dos-dados-recuperados).
 
 ```sh
 #!/bin/bash
