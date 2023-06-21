@@ -123,27 +123,27 @@ icat -o 2048 ../../../img_p1.dd 394767 > eye.jpg
 
 <br />
 
-## Analise dos dados recuperados
+### Analise dos dados recuperados
 
-> #### Backup_viagem/_LHEAP~1.JPG
->
-> ```text
-> senha: panic
-> 
-> OBS: Senha escrita pelo Misha.
-> ```
+#### Backup_viagem/_LHEAP~1.JPG
 
-> #### carta.exe
->
-> Este arquivo não é um executável, na realidade ele é um `ASCII text` que contém um texto com pontuações  fora do comum, o que se encaixa em um `SPAM mimic`.
->
-> Link: [spammimic.com](https://www.spammimic.com/decode32.shtml)
->
-> ```text
-> senha: alma
-> 
-> OBS: Foi utilizado a versão antiga do spammimic.com para conseguirmos decodificar a mensagem
-> ```
+```text
+senha: panic
+
+OBS: Senha escrita pelo Misha.
+```
+
+#### carta.exe
+
+```text
+senha: alma
+
+OBS: Este arquivo não é um executável, na realidade ele é um `ASCII text` que contém um texto com pontuações  fora do comum, o que se encaixa em um `SPAM mimic`.
+
+     Foi utilizado a versão antiga do spammimic.com para conseguirmos decodificar a mensagem
+     
+     Link: [spammimic.com](https://www.spammimic.com/decode32.shtml)
+```
 
 #### trash/0/ "olhe a paisagem.jpg"
 
@@ -255,16 +255,14 @@ OBS: Desbloqueio do arquivo pelo comando steghide (não temos a palavra secreta)
 
 #### Controle_Clientes.xlsx
 
-Se trata de uma planilha de Excel criada por Eduardo Montes - <eduardo@escritoriodeprojetos.com.br>.
-
-O Workspace do Excel continha uma única aba chamada `Sheet 2`, o que nos indica que havia uma `Sheet 1` que foi deletada ou escondida.
-
-Trocando a extensão do arquivo de `xlsx` para `zip` e realizando a descompactação do arquivo com o comando `unzip Controle_Clientes.zip` conseguimos encontrar a planilha `Sheet 1` na masta `_xl`, mas não consegui extrair nenhuma informação pertinente dessa aba.
-
 ```text
 senha: Nenhuma
 
-OBS: O arquivo está vazio.
+OBS: Se trata de uma planilha de Excel criada por Eduardo Montes - <eduardo@escritoriodeprojetos.com.br>.
+
+     O Workspace do Excel continha uma única aba chamada `Sheet 2`, o que nos indica que havia uma `Sheet 1`  que foi deletada ou escondida.
+
+     Trocando a extensão do arquivo de `xlsx` para `zip` e realizando a descompactação do arquivo com o comando `unzip Controle_Clientes.zip` conseguimos encontrar a planilha `Sheet 1` na masta `_xl`, mas não consegui extrair nenhuma informação pertinente dessa aba.
 ```
 
 #### foto1.png
