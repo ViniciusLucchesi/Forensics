@@ -115,7 +115,7 @@ done
 
 Ao total somente esses 3 arquivos foram abertos através deste script shell, nos retornando **2 novas imagens** e **1 log de erro**, sendo uma das 2 novas imagens a **Ayishah.jpg** que nos devolveu o **log de erro**.
 
-```sh
+```text
 OUTPUT 
 
 [*] Analisando: /home/kali/Downloads/prova/imagens/Ayishah.jpg
