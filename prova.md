@@ -2,38 +2,46 @@
 
 # Prova
 
-![development_progress](https://img.shields.io/badge/development-progress-orange)
+![development_progress](https://img.shields.io/badge/Status-concluído-green)
 ![start_date](https://img.shields.io/badge/Start-14/06/2023-informational)
 ![end_date](https://img.shields.io/badge/End-21/06/2023-informational)
 
-Extract all information aboud **img_p1.dd**
+Encontre todas as senhas escondidas no arquivo **img_p1.dd**
 
-All images and exemples used on this repository will be available on this [Google Drive](https://drive.google.com/drive/folders/1xWlrwM7W38h8E6JtuCbDOMazfARTOlms) folder.
+O arquivo pode ser encontrado no [Google Drive](https://drive.google.com/drive/folders/1xWlrwM7W38h8E6JtuCbDOMazfARTOlms) disponibilizado pelo professor.
 
 <br />
 <br />
 
 </div>
 
-## Objectives
+## Disclaimer
 
-- Recovered files
-- Found passwords
-- Final result
+Não execute nenhuma dessas ações em seu computador de uso diário, esteja ciente de que alguns dos arquivos contidos na pasta do Google Drive contêm vírus.
+
+Todos os comandos descritos nos outros repositórios foram executados em um Kali Linux ISO rodando em uma máquina virtual.
+
+<br />
+
+## Objetivo
+
+Encontrar todas as senhas que estão escondidas dentro do arquivo **img_p1.dd**, que foram escondidas utilizando a técnica de esteganografia.
 
 <br />
 
 ## Senhas encontradas
 
 ```text
-seus_olhos
+1. panic
+2. alma
+3. seus_olhos
 ```
 
 <br />
 
 ## Configurações iniciais
 
-Primeiramente precisamos extrair todos os arquivos da imagem **img_p1.dd**.
+Primeiramente precisamos extrair todos os arquivos da imagem **img_p1.dd**, para isso vamos criar uma pasta chamada **analise** onde serão extraídos os arquivos.
 
 ```sh
 mkdir analise
@@ -42,12 +50,6 @@ mkdir analise
 ```sh
 sudo mount -o ro,noexec,offset=$((512*2048)) img_p1.dd analise
 ```
-
-<br />
-
-## Recuperando arquivos da imagem
-
-Para realizarmos a recuperação dos arquivos da imagem **img_p1.dd** sem poluir muito nossos resultados da prova iremos faze-lo em um [arquivo separado](recuperacao_arquivos.md#recuperação-de-arquivos).
 
 <br />
 
@@ -67,6 +69,18 @@ grep: ./img_p1.dd: binary file matches
 grep: ./analise/.Trash-0/files/olhe a paisagem.jpg: binary file matches
 grep: ./analise/.Trash-0/files/eye.jpg: binary file matches
 ```
+
+Como podemos ver existem alguns arquivos que contém a palavra **senh**, que estão na lixeira.
+
+Então antes de mais nada vamos tentar recuperar esses e outros arquivos que estão na lixeira, para conseguirmos analisa-los.
+
+<br />
+
+## Recuperando arquivos da imagem
+
+Para realizarmos a recuperação dos arquivos da imagem **img_p1.dd** sem poluir muito nossos resultados da prova iremos faze-lo em um [arquivo separado](recuperacao_arquivos.md#recuperação-de-arquivos).
+
+<br />
 
 ## Brute Force - steghide
 
