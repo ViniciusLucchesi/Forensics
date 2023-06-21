@@ -2,9 +2,9 @@
 
 # Recuperação de Arquivos
 
-![development_progress](https://img.shields.io/badge/Status-concluído-green)
-![start_date](https://img.shields.io/badge/Start-20/06/2023-informational)
-![end_date](https://img.shields.io/badge/End-21/06/2023-informational)
+![development_progress](https://img.shields.io/badge/Status-concluído-green) &nbsp;
+![start_date](https://img.shields.io/badge/Start-20/06/2023-informational) &nbsp;
+![end_date](https://img.shields.io/badge/End-21/06/2023-informational) &nbsp;
 
 Tenha uma visão mais ampla dos passos realizados para a obtenção de alguma senha.
 
@@ -17,29 +17,36 @@ Todos os arquivos propostos a serem analisados passaram pelos processos da sess�
 
 ## Tipos de análises
 
-> ### file
 >
 > ```sh
 > file [nome_do_arquivo]
 > ```
 >
 > Comando responsável por verificar a extensão do arquivo, para validarmos se ele corresponde com a extensão apresentada em seu nome.
-
-```sh
-head -n5 [nome_do_arquivo]
-```
-
-```sh
-tail [nome_do_arquivo]
-```
-
-```sh
-strings -a [nome_do_arquivo]
-```
-
-```sh
-exiftool [nome_do_arquivo]
-```
+>
+> ```sh
+> head -n5 [nome_do_arquivo]
+> ```
+>
+> Retorna somente as primeira linhas do arquivo, o parâmetro `-n5` especifica que devem ser retornados somente as 5 linhas.
+>
+> ```sh
+> tail [nome_do_arquivo]
+> ```
+>
+> Retorna somente o rodapé do arquivo passado como parâmetro.
+>
+> ```sh
+> strings -a [nome_do_arquivo]
+> ```
+>
+> Retorna o texto encontrado no arquivo, o parâmetro `-a` especifica que a busca por texto deve ser feita em todo o arquivo.
+>
+> ```sh
+> exiftool [nome_do_arquivo]
+> ```
+>
+> Utilizado para verificar os metadados do arquivo passado como parâmetro.
 
 <br />
 
